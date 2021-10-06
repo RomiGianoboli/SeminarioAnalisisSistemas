@@ -40,7 +40,7 @@ namespace TPI_PAV.RepositoriosBD
 
         public int RegistrarProducto(Producto p)
         {
-            var sentenciaSQL = $"INSERT INTO Productos (nombre, fecha_alta, precio, stock, estado) VALUES('{p.NombreProducto}', '{p.FechaAlta.ToString("yyyy-MM-dd")}', {p.Precio}, {p.Stock}, 'S')";
+            var sentenciaSQL = $"INSERT INTO Productos (nombre, fecha_alta, stock, estado, precio) VALUES('{p.NombreProducto}', '{p.FechaAlta.ToString("yyyy-MM-dd")}', {p.Stock}, 'S', {p.Precio.ToString().Replace(",", ".")})";
             var filasAfectadas = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSQL);
             return filasAfectadas;
         }

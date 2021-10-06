@@ -20,22 +20,28 @@ namespace TPI_PAV.RepositoriosBD
 
         }
 
-        public void GenerarFactura(Factura fa,  DetalleFactura ld)
+        public void GenerarFactura(Factura fa,  List<DetalleFactura> ld)
         {
             using (var tx = DBHelper.GetDBHelper().IniciarTransaccion())
             {
                 try
                 {
                     var sql = $"INSERT INTO Facturas (id_cliente, fecha_alta, id_usuario_creador, total, estado, numero_factura) " +
-                        $"VALUES({fa.Cliente.Id}, '{fa.FechaAlta.ToString("yyyy-MM-dd")}',{fa.Usuario.Id},{fa.Total},'S',{fa.NumeroFactura})";
+                        $"VALUES({fa.Cliente.Id}, '{fa.FechaAlta.ToString("yyyy-MM-dd")}',{fa.Usuario.Id}, {fa.Total.ToString().Replace(",", ".")},'S',{fa.NumeroFactura})";
 
                     //capturamos el id de la factura porque el detalle factura lo necesita en la tabla
 
                     fa.Id = DBHelper.GetDBHelper().EjecutarTransaccionSQL(sql);
 
-                    var sqlDetalleFa = $"INSERT INTO FacturasDetalle (id_factura, id_producto, cantidad, estado, precio) " +
-                        $"VALUES ({fa.Id}, {ld.producto.Id},{ld.Cantidad},'S',{ld.Precio})" ;
-                    DBHelper.GetDBHelper().EjecutarTransaccionSQL(sqlDetalleFa);
+                    foreach (DetalleFactura df in ld)
+                    {
+                        var sqlDetalleFa = $"INSERT INTO FacturasDetalle (id_factura, id_producto, cantidad, estado, precio) " +
+                       $"VALUES ({fa.Id}, {df.producto.Id},{df.Cantidad},'S',{df.Precio.ToString().Replace(",", ".")})";
+                        DBHelper.GetDBHelper().EjecutarTransaccionSQL(sqlDetalleFa);
+                    }
+                   
+
+
                     tx.Commit(); // con esto le indico que realmente se registro la tabla
                 }
                 catch (Exception ex )

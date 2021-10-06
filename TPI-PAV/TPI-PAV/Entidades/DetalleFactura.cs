@@ -10,7 +10,6 @@ namespace TPI_PAV.Entidades
     {
         public int Id { get; set; }
         public Factura Factura { get; set; }
-        public int NumeroOrden { get; set; }
         public Producto producto { get; set; }
         public decimal Precio { get; set; }
         public int Cantidad { get; set; }

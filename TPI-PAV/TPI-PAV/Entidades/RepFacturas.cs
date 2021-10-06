@@ -6,20 +6,16 @@ using System.Threading.Tasks;
 
 namespace TPI_PAV.Entidades
 {
-    public class Factura
+    public class RepFacturas
     {
+        public DateTime? FechaDesde { get; set; }
+        public DateTime? FechaHasta { get; set; }
+        public int ClienteId { get; set; }
         public int Id { get; set; }
-        public int Sucursal { get; set; }
-        public int NumeroFactura { get; set; }
-        public Cliente Cliente { get; set; }
         public DateTime FechaAlta { get; set; }
-        public Usuario Usuario { get; set; }
         public decimal Total { get; set; }
-        public bool Estado { get; set; }
 
 
-      
+       
     }
-
- 
 }

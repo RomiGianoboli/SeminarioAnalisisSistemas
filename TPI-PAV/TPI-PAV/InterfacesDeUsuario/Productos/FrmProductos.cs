@@ -38,8 +38,9 @@ namespace TPI_PAV.InterfacesDeUsuario.Productos
             var incluitTodos = CkIncluirInactivos.Checked; 
 
             var productos = productosServicio.GetProductos(productoFiltros, incluitTodos);
-            //DgvProductos.Rows.Clear();
             DgvProductos.DataSource = productos;
+            //DgvProductos.Rows.Clear();
+
 
             //foreach (var producto in productos)
             //{
@@ -61,11 +62,8 @@ namespace TPI_PAV.InterfacesDeUsuario.Productos
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-            var dialog = MessageBox.Show("¿Desea salir?", "Informacion", MessageBoxButtons.OKCancel);
-            if (dialog == DialogResult.OK)
-            {
                 this.Dispose();
-            }
+            
         }
 
         private void BtnNuevo_Click(object sender, EventArgs e)
@@ -79,7 +77,7 @@ namespace TPI_PAV.InterfacesDeUsuario.Productos
             if (DgvProductos.SelectedRows.Count == 1)
             {
                 var id = Convert.ToInt32(DgvProductos.SelectedRows[0].Cells["Id"].Value);
-                new FrmEditarProducto(id).ShowDialog();
+                new FrmEditarProducto(id).Show();
                 ConsultarProductos();
                 return;
             }

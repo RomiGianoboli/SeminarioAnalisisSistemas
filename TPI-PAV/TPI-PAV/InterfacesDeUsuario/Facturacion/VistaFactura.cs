@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPI_PAV.Entidades;
 using TPI_PAV.Servicios;
+using System.Collections.ObjectModel;
 
 namespace TPI_PAV.InterfacesDeUsuario
 {
@@ -19,7 +20,10 @@ namespace TPI_PAV.InterfacesDeUsuario
         public ProductosServicio productosServicio;
         public ClientesServicio clientesServicio;
         public int numeroFactura;
-        public List<DetalleFactura> listaDetalle;
+        public List<DetalleFactura> listaDetalle = new List<DetalleFactura>();
+
+        
+
         public VistaFactura()
         {
 
@@ -45,7 +49,8 @@ namespace TPI_PAV.InterfacesDeUsuario
 
             CargarProductos();
             usuarioLogueado = UsuariosServicio.UsuarioLogueado;
-            TxtUsuario.Text = $"{usuarioLogueado.NombreUsuario} - Perfil:{usuarioLogueado.Perfil.Id}";
+            TxtUsuario.Text = $"{usuarioLogueado.NombreUsuario}";
+            
         }
 
         private void CargarClientes()
@@ -53,8 +58,10 @@ namespace TPI_PAV.InterfacesDeUsuario
 
             var clientes = clientesServicio.GetClientes();
             var clienteSeleccionado = clientes.First();
+
             var conector = new BindingSource();
             conector.DataSource = clientes;
+
             CbCliente.DataSource = conector;
             CbCliente.DisplayMember = "NombreCliente";
             CbCliente.ValueMember = "Id";
@@ -71,7 +78,6 @@ namespace TPI_PAV.InterfacesDeUsuario
             CbProducto.ValueMember = "Id";
             CbProducto.SelectedIndex = 0;
         }
-
 
 
         private void SetearUltimoNumeroFactura()
@@ -97,44 +103,87 @@ namespace TPI_PAV.InterfacesDeUsuario
             
         }
 
-        
-
         private void AgregarProducto()
         {
+            var df = new DetalleFactura();
 
-            DetalleFactura df = new DetalleFactura();
-
-            df.producto =(Producto)CbProducto.SelectedItem;
+            df.producto = (Producto)CbProducto.SelectedItem;
             df.Precio = Convert.ToDecimal(TxtPrecio.Text);
             df.Cantidad = Convert.ToInt32(TxtCantidad.Text);
             df.Estado = true;
             listaDetalle.Add(df);
 
-            RefrescarGrilla();
-
+            CargarGrilla(listaDetalle);
         }
 
-        
-        private void AgregarProducto2()
+        private void CargarGrilla(List<DetalleFactura> df)
         {
+            decimal totalFactura = 0;
             DgvDetalle.Rows.Clear();
+            foreach (var d in df)
+            {
+                var fila = new string[] {
+                    d.Id.ToString(),
+                    d.NombreProducto,
+                    d.Precio.ToString(),
+                    d.Cantidad.ToString(),
+                    d.Total.ToString()
+                };
+                DgvDetalle.Rows.Add(fila);
 
-        }
-        
+                totalFactura += d.Total; 
+            }
 
-        private void RefrescarGrilla()
-        {
-            DgvDetalle.DataSource = listaDetalle;
-            DgvDetalle.Refresh();
+            TxtTotal.Text = totalFactura.ToString();
         }
+
 
         private void BtnGenerarFactura_Click(object sender, EventArgs e)
         {
-            Factura fa = new Factura();
-            DetalleFactura ld = new DetalleFactura();
-            //TODO CARGAR OBJETO
+            //Factura fa = new Factura();
 
-            facturasServicio.GenerarFactura(fa, ld);
+            //fa.NumeroFactura = Convert.ToInt32(TxtNumeroFactura.Text);
+            //fa.FechaAlta = Convert.ToDateTime(DtpFechaAlta.Value);
+            //fa.Usuario.Id = Convert.ToInt32(TxtUsuario.Text);
+            //fa.Cliente = (Cliente)CbCliente.SelectedItem;
+            //fa.Total = Convert.ToInt32(TxtTotal.Text);
+
+            //facturasServicio.GenerarFactura(fa, listaDetalle);
+
+            ////opc1: si usamos en datasource cuando cargamos la grilla
+
+            //List<DetalleFactura> df = (List<DetalleFactura>)DgvDetalle.DataSource;
+
+            //Opc2
+            //List<DetalleFactura> ldf = new List<DetalleFactura>();
+
+            //foreach (DataGridViewRow row in DgvDetalle.Rows)
+            //{
+            //    DetalleFactura df = new DetalleFactura();
+
+            //    df.producto = row.Cells["nombre"]
+            //    df.Precio = Convert.ToDecimal(row.Cells["precio"].ToString());
+            //    df.Cantidad = Convert.ToInt32(row.Cells["cantidad"].ToString());
+
+            //    ldf.Add(df);
+            //}
+
+            
+        }
+
+        private void BtnGenerarFactura_Click_1(object sender, EventArgs e)
+        {
+            Factura fa = new Factura();
+
+            fa.NumeroFactura = numeroFactura;
+            fa.FechaAlta = Convert.ToDateTime(DtpFechaAlta.Value);
+            fa.Cliente = (Cliente)CbCliente.SelectedItem;
+            fa.Total = Convert.ToDecimal(TxtTotal.Text);
+            fa.Usuario = usuarioLogueado;
+
+            facturasServicio.GenerarFactura(fa, listaDetalle);
+            MessageBox.Show("Se genero la factura con éxito", "Información");
+
         }
     }
 }

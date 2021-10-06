@@ -32,7 +32,7 @@ namespace TPI_PAV.InterfacesDeUsuario.Clientes
             TxtNombre.Text = cliente.NombreCliente;
             TxtCalle.Text = cliente.Calle;
             TxtNumero.Text = cliente.NumeroCalle.ToString();
-            //TxtEmail.Text = cliente.Email;
+            TxtEmail.Text = cliente.Email;
            
         }
 
@@ -74,7 +74,7 @@ namespace TPI_PAV.InterfacesDeUsuario.Clientes
             cliente.Barrio = (Barrio)CbBarrio.SelectedItem;
             cliente.Calle = TxtCalle.Text;
             cliente.NumeroCalle = Convert.ToInt32(TxtNombre.Text.Trim());
-            //cliente.Email = TxtEmail.Text;
+            cliente.Email = TxtEmail.Text;
             clienteServicio.ValidarCliente(cliente);
         }
 

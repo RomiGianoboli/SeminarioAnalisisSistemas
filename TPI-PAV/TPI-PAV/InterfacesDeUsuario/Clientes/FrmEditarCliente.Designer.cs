@@ -41,6 +41,7 @@ namespace TPI_PAV.InterfacesDeUsuario.Clientes
             this.TxtNumero = new System.Windows.Forms.TextBox();
             this.TxtCalle = new System.Windows.Forms.TextBox();
             this.LblEmail = new System.Windows.Forms.Label();
+            this.TxtEmail = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // BtnGuardar
@@ -146,12 +147,20 @@ namespace TPI_PAV.InterfacesDeUsuario.Clientes
             this.LblEmail.TabIndex = 12;
             this.LblEmail.Text = "Email";
             // 
+            // TxtEmail
+            // 
+            this.TxtEmail.Location = new System.Drawing.Point(158, 207);
+            this.TxtEmail.Name = "TxtEmail";
+            this.TxtEmail.Size = new System.Drawing.Size(201, 20);
+            this.TxtEmail.TabIndex = 13;
+            // 
             // FrmEditarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Olive;
             this.ClientSize = new System.Drawing.Size(371, 308);
+            this.Controls.Add(this.TxtEmail);
             this.Controls.Add(this.LblEmail);
             this.Controls.Add(this.TxtCalle);
             this.Controls.Add(this.TxtNumero);
@@ -186,5 +195,6 @@ namespace TPI_PAV.InterfacesDeUsuario.Clientes
         private System.Windows.Forms.TextBox TxtNumero;
         private System.Windows.Forms.TextBox TxtCalle;
         private System.Windows.Forms.Label LblEmail;
+        private System.Windows.Forms.TextBox TxtEmail;
     }
 }

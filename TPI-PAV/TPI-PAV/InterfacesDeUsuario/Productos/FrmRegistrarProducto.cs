@@ -33,7 +33,7 @@ namespace TPI_PAV.InterfacesDeUsuario.Productos
         private bool EsProductoValido()
         {
             var nombre = TxtNombre.Text.Trim();
-            var precio = Convert.ToInt64(TxtPrecio.Text.Trim());
+            var precio = Convert.ToDecimal(TxtPrecio.Text.Trim());
             var stock = Convert.ToInt32(TxtStock.Text.Trim());
             var fechaAlta = Convert.ToDateTime(DtpFechaAlta.Text.Trim());
 
@@ -61,11 +61,7 @@ namespace TPI_PAV.InterfacesDeUsuario.Productos
         
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-            var dialog = MessageBox.Show("¿Desea salir?", "Informacion", MessageBoxButtons.OKCancel);
-            if (dialog == DialogResult.OK)
-            {
                 this.Dispose();
-            }
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)

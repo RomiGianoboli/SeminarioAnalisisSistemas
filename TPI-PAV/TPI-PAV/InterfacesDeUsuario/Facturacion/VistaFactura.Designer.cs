@@ -39,12 +39,6 @@ namespace TPI_PAV.InterfacesDeUsuario
             this.LblProducto = new System.Windows.Forms.Label();
             this.TxtCantidad = new System.Windows.Forms.TextBox();
             this.TxtPrecio = new System.Windows.Forms.TextBox();
-            this.DgvDetalle = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LblTotal = new System.Windows.Forms.Label();
             this.TxtTotal = new System.Windows.Forms.TextBox();
             this.BtnGenerarFactura = new System.Windows.Forms.Button();
@@ -54,6 +48,12 @@ namespace TPI_PAV.InterfacesDeUsuario
             this.button1 = new System.Windows.Forms.Button();
             this.TxtFechaAlta = new System.Windows.Forms.Label();
             this.DtpFechaAlta = new System.Windows.Forms.DateTimePicker();
+            this.DgvDetalle = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDetalle)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,7 +79,7 @@ namespace TPI_PAV.InterfacesDeUsuario
             // 
             this.Cliente.AutoSize = true;
             this.Cliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cliente.Location = new System.Drawing.Point(392, 39);
+            this.Cliente.Location = new System.Drawing.Point(392, 36);
             this.Cliente.Name = "Cliente";
             this.Cliente.Size = new System.Drawing.Size(58, 17);
             this.Cliente.TabIndex = 3;
@@ -99,7 +99,7 @@ namespace TPI_PAV.InterfacesDeUsuario
             // CbCliente
             // 
             this.CbCliente.FormattingEnabled = true;
-            this.CbCliente.Location = new System.Drawing.Point(470, 35);
+            this.CbCliente.Location = new System.Drawing.Point(500, 34);
             this.CbCliente.Name = "CbCliente";
             this.CbCliente.Size = new System.Drawing.Size(200, 21);
             this.CbCliente.TabIndex = 8;
@@ -118,7 +118,7 @@ namespace TPI_PAV.InterfacesDeUsuario
             // 
             this.LblCantidad.AutoSize = true;
             this.LblCantidad.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCantidad.Location = new System.Drawing.Point(392, 75);
+            this.LblCantidad.Location = new System.Drawing.Point(392, 77);
             this.LblCantidad.Name = "LblCantidad";
             this.LblCantidad.Size = new System.Drawing.Size(75, 17);
             this.LblCantidad.TabIndex = 10;
@@ -136,7 +136,7 @@ namespace TPI_PAV.InterfacesDeUsuario
             // 
             // TxtCantidad
             // 
-            this.TxtCantidad.Location = new System.Drawing.Point(470, 75);
+            this.TxtCantidad.Location = new System.Drawing.Point(500, 70);
             this.TxtCantidad.Name = "TxtCantidad";
             this.TxtCantidad.Size = new System.Drawing.Size(200, 20);
             this.TxtCantidad.TabIndex = 12;
@@ -147,6 +147,102 @@ namespace TPI_PAV.InterfacesDeUsuario
             this.TxtPrecio.Name = "TxtPrecio";
             this.TxtPrecio.Size = new System.Drawing.Size(200, 20);
             this.TxtPrecio.TabIndex = 13;
+            // 
+            // LblTotal
+            // 
+            this.LblTotal.AutoSize = true;
+            this.LblTotal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotal.Location = new System.Drawing.Point(510, 353);
+            this.LblTotal.Name = "LblTotal";
+            this.LblTotal.Size = new System.Drawing.Size(43, 17);
+            this.LblTotal.TabIndex = 16;
+            this.LblTotal.Text = "Total:";
+            // 
+            // TxtTotal
+            // 
+            this.TxtTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TxtTotal.Location = new System.Drawing.Point(559, 350);
+            this.TxtTotal.Name = "TxtTotal";
+            this.TxtTotal.ReadOnly = true;
+            this.TxtTotal.Size = new System.Drawing.Size(107, 20);
+            this.TxtTotal.TabIndex = 17;
+            // 
+            // BtnGenerarFactura
+            // 
+            this.BtnGenerarFactura.BackColor = System.Drawing.Color.Silver;
+            this.BtnGenerarFactura.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGenerarFactura.Location = new System.Drawing.Point(470, 402);
+            this.BtnGenerarFactura.Name = "BtnGenerarFactura";
+            this.BtnGenerarFactura.Size = new System.Drawing.Size(142, 23);
+            this.BtnGenerarFactura.TabIndex = 18;
+            this.BtnGenerarFactura.Text = "Generar factura";
+            this.BtnGenerarFactura.UseVisualStyleBackColor = false;
+            this.BtnGenerarFactura.Click += new System.EventHandler(this.BtnGenerarFactura_Click_1);
+            // 
+            // BtnAgregar
+            // 
+            this.BtnAgregar.BackColor = System.Drawing.Color.Silver;
+            this.BtnAgregar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.ForeColor = System.Drawing.Color.Black;
+            this.BtnAgregar.Location = new System.Drawing.Point(558, 141);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(142, 30);
+            this.BtnAgregar.TabIndex = 19;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            // 
+            // TxtUsuario
+            // 
+            this.TxtUsuario.BackColor = System.Drawing.Color.Olive;
+            this.TxtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtUsuario.Location = new System.Drawing.Point(69, 389);
+            this.TxtUsuario.Name = "TxtUsuario";
+            this.TxtUsuario.ReadOnly = true;
+            this.TxtUsuario.Size = new System.Drawing.Size(172, 16);
+            this.TxtUsuario.TabIndex = 20;
+            // 
+            // CbProducto
+            // 
+            this.CbProducto.FormattingEnabled = true;
+            this.CbProducto.Location = new System.Drawing.Point(177, 71);
+            this.CbProducto.Name = "CbProducto";
+            this.CbProducto.Size = new System.Drawing.Size(200, 21);
+            this.CbProducto.TabIndex = 21;
+            this.CbProducto.SelectedIndexChanged += new System.EventHandler(this.CbProducto_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Silver;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(625, 402);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // TxtFechaAlta
+            // 
+            this.TxtFechaAlta.AutoSize = true;
+            this.TxtFechaAlta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtFechaAlta.Location = new System.Drawing.Point(392, 107);
+            this.TxtFechaAlta.Name = "TxtFechaAlta";
+            this.TxtFechaAlta.Size = new System.Drawing.Size(102, 17);
+            this.TxtFechaAlta.TabIndex = 23;
+            this.TxtFechaAlta.Text = "Fecha de alta:";
+            // 
+            // DtpFechaAlta
+            // 
+            this.DtpFechaAlta.CustomFormat = "dd-MM-yyyy";
+            this.DtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DtpFechaAlta.Location = new System.Drawing.Point(500, 104);
+            this.DtpFechaAlta.MinDate = new System.DateTime(1960, 1, 1, 0, 0, 0, 0);
+            this.DtpFechaAlta.Name = "DtpFechaAlta";
+            this.DtpFechaAlta.Size = new System.Drawing.Size(200, 20);
+            this.DtpFechaAlta.TabIndex = 24;
             // 
             // DgvDetalle
             // 
@@ -160,12 +256,13 @@ namespace TPI_PAV.InterfacesDeUsuario
             this.Precio,
             this.Cantidad,
             this.Total});
-            this.DgvDetalle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.DgvDetalle.Location = new System.Drawing.Point(61, 191);
+            this.DgvDetalle.Location = new System.Drawing.Point(69, 190);
+            this.DgvDetalle.MultiSelect = false;
             this.DgvDetalle.Name = "DgvDetalle";
+            this.DgvDetalle.ReadOnly = true;
             this.DgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvDetalle.Size = new System.Drawing.Size(609, 150);
-            this.DgvDetalle.TabIndex = 15;
+            this.DgvDetalle.Size = new System.Drawing.Size(598, 150);
+            this.DgvDetalle.TabIndex = 25;
             // 
             // Id
             // 
@@ -180,7 +277,7 @@ namespace TPI_PAV.InterfacesDeUsuario
             this.Producto.HeaderText = "Producto";
             this.Producto.Name = "Producto";
             this.Producto.ReadOnly = true;
-            this.Producto.Width = 130;
+            this.Producto.Width = 140;
             // 
             // Precio
             // 
@@ -188,7 +285,7 @@ namespace TPI_PAV.InterfacesDeUsuario
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
-            this.Precio.Width = 130;
+            this.Precio.Width = 140;
             // 
             // Cantidad
             // 
@@ -196,7 +293,7 @@ namespace TPI_PAV.InterfacesDeUsuario
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 130;
+            this.Cantidad.Width = 140;
             // 
             // Total
             // 
@@ -204,103 +301,15 @@ namespace TPI_PAV.InterfacesDeUsuario
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
-            this.Total.Width = 130;
-            // 
-            // LblTotal
-            // 
-            this.LblTotal.AutoSize = true;
-            this.LblTotal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotal.Location = new System.Drawing.Point(467, 354);
-            this.LblTotal.Name = "LblTotal";
-            this.LblTotal.Size = new System.Drawing.Size(43, 17);
-            this.LblTotal.TabIndex = 16;
-            this.LblTotal.Text = "Total:";
-            // 
-            // TxtTotal
-            // 
-            this.TxtTotal.Location = new System.Drawing.Point(517, 351);
-            this.TxtTotal.Name = "TxtTotal";
-            this.TxtTotal.Size = new System.Drawing.Size(107, 20);
-            this.TxtTotal.TabIndex = 17;
-            // 
-            // BtnGenerarFactura
-            // 
-            this.BtnGenerarFactura.BackColor = System.Drawing.Color.Silver;
-            this.BtnGenerarFactura.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGenerarFactura.Location = new System.Drawing.Point(482, 440);
-            this.BtnGenerarFactura.Name = "BtnGenerarFactura";
-            this.BtnGenerarFactura.Size = new System.Drawing.Size(142, 23);
-            this.BtnGenerarFactura.TabIndex = 18;
-            this.BtnGenerarFactura.Text = "Generar factura";
-            this.BtnGenerarFactura.UseVisualStyleBackColor = false;
-            this.BtnGenerarFactura.Click += new System.EventHandler(this.BtnGenerarFactura_Click);
-            // 
-            // BtnAgregar
-            // 
-            this.BtnAgregar.BackColor = System.Drawing.Color.Silver;
-            this.BtnAgregar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregar.ForeColor = System.Drawing.Color.Black;
-            this.BtnAgregar.Location = new System.Drawing.Point(528, 144);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(142, 30);
-            this.BtnAgregar.TabIndex = 19;
-            this.BtnAgregar.Text = "Agregar";
-            this.BtnAgregar.UseVisualStyleBackColor = false;
-            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
-            // 
-            // TxtUsuario
-            // 
-            this.TxtUsuario.Location = new System.Drawing.Point(76, 389);
-            this.TxtUsuario.Name = "TxtUsuario";
-            this.TxtUsuario.ReadOnly = true;
-            this.TxtUsuario.Size = new System.Drawing.Size(200, 20);
-            this.TxtUsuario.TabIndex = 20;
-            // 
-            // CbProducto
-            // 
-            this.CbProducto.FormattingEnabled = true;
-            this.CbProducto.Location = new System.Drawing.Point(177, 71);
-            this.CbProducto.Name = "CbProducto";
-            this.CbProducto.Size = new System.Drawing.Size(200, 21);
-            this.CbProducto.TabIndex = 21;
-            this.CbProducto.SelectedIndexChanged += new System.EventHandler(this.CbProducto_SelectedIndexChanged);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(673, 440);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // TxtFechaAlta
-            // 
-            this.TxtFechaAlta.AutoSize = true;
-            this.TxtFechaAlta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFechaAlta.Location = new System.Drawing.Point(392, 107);
-            this.TxtFechaAlta.Name = "TxtFechaAlta";
-            this.TxtFechaAlta.Size = new System.Drawing.Size(75, 17);
-            this.TxtFechaAlta.TabIndex = 23;
-            this.TxtFechaAlta.Text = "Cantidad:";
-            // 
-            // DtpFechaAlta
-            // 
-            this.DtpFechaAlta.CustomFormat = "dd-MM-yyyy";
-            this.DtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpFechaAlta.Location = new System.Drawing.Point(470, 103);
-            this.DtpFechaAlta.MinDate = new System.DateTime(1960, 1, 1, 0, 0, 0, 0);
-            this.DtpFechaAlta.Name = "DtpFechaAlta";
-            this.DtpFechaAlta.Size = new System.Drawing.Size(200, 20);
-            this.DtpFechaAlta.TabIndex = 24;
+            this.Total.Width = 140;
             // 
             // VistaFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Olive;
-            this.ClientSize = new System.Drawing.Size(760, 489);
+            this.ClientSize = new System.Drawing.Size(721, 437);
+            this.Controls.Add(this.DgvDetalle);
             this.Controls.Add(this.DtpFechaAlta);
             this.Controls.Add(this.TxtFechaAlta);
             this.Controls.Add(this.button1);
@@ -310,7 +319,6 @@ namespace TPI_PAV.InterfacesDeUsuario
             this.Controls.Add(this.BtnGenerarFactura);
             this.Controls.Add(this.TxtTotal);
             this.Controls.Add(this.LblTotal);
-            this.Controls.Add(this.DgvDetalle);
             this.Controls.Add(this.TxtPrecio);
             this.Controls.Add(this.TxtCantidad);
             this.Controls.Add(this.LblProducto);
@@ -344,7 +352,6 @@ namespace TPI_PAV.InterfacesDeUsuario
         private System.Windows.Forms.Label LblProducto;
         private System.Windows.Forms.TextBox TxtCantidad;
         private System.Windows.Forms.TextBox TxtPrecio;
-        private System.Windows.Forms.DataGridView DgvDetalle;
         private System.Windows.Forms.Label LblTotal;
         private System.Windows.Forms.TextBox TxtTotal;
         private System.Windows.Forms.Button BtnGenerarFactura;
@@ -352,12 +359,13 @@ namespace TPI_PAV.InterfacesDeUsuario
         private System.Windows.Forms.TextBox TxtUsuario;
         private System.Windows.Forms.ComboBox CbProducto;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label TxtFechaAlta;
+        private System.Windows.Forms.DateTimePicker DtpFechaAlta;
+        private System.Windows.Forms.DataGridView DgvDetalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.Label TxtFechaAlta;
-        private System.Windows.Forms.DateTimePicker DtpFechaAlta;
     }
 }

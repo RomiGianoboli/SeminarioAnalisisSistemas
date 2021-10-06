@@ -55,6 +55,8 @@
     <Compile Include="Entidades\Perfil.cs" />
     <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\Proveedor.cs" />
+    <Compile Include="Entidades\RepFacturas.cs" />
+    <Compile Include="Entidades\RepProductos.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="InterfacesDeUsuario\Clientes\FrmBajaCliente.cs">
       <SubType>Form</SubType>
@@ -140,6 +142,18 @@
     <Compile Include="InterfacesDeUsuario\Proveedores\FrmRegistrarProveedor.Designer.cs">
       <DependentUpon>FrmRegistrarProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfacesDeUsuario\Reportes\FrmListadoFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Reportes\FrmListadoFacturas.Designer.cs">
+      <DependentUpon>FrmListadoFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Reportes\FrmProductosMasVendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Reportes\FrmProductosMasVendidos.Designer.cs">
+      <DependentUpon>FrmProductosMasVendidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfacesDeUsuario\Usuarios\FrmBajaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +194,8 @@
     <Compile Include="RepositoriosBD\PerfilesRepositorio.cs" />
     <Compile Include="RepositoriosBD\ProductosRepositorio.cs" />
     <Compile Include="RepositoriosBD\ProveedoresRepositorio.cs" />
+    <Compile Include="RepositoriosBD\RepFacturasRepositorio.cs" />
+    <Compile Include="RepositoriosBD\RepProductosRepositorio.cs" />
     <Compile Include="RepositoriosBD\UsuariosRepositorio.cs" />
     <Compile Include="Servicios\BarriosServicio.cs" />
     <Compile Include="Servicios\ClientesServicio.cs" />
@@ -188,6 +204,7 @@
     <Compile Include="Servicios\PerfilesServicio.cs" />
     <Compile Include="Servicios\ProductosServicio.cs" />
     <Compile Include="Servicios\ProveedoresServicio.cs" />
+    <Compile Include="Servicios\RepFacturasServicio.cs" />
     <Compile Include="Servicios\UsuariosServicio.cs" />
     <Compile Include="Utils\FormUtils.cs" />
     <EmbeddedResource Include="InterfacesDeUsuario\Clientes\FrmBajaCliente.resx">
@@ -222,6 +239,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfacesDeUsuario\Proveedores\FrmProveedores.resx">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Reportes\FrmListadoFacturas.resx">
+      <DependentUpon>FrmListadoFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Reportes\FrmProductosMasVendidos.resx">
+      <DependentUpon>FrmProductosMasVendidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfacesDeUsuario\Usuarios\FrmBajaUsuario.resx">
       <DependentUpon>FrmBajaUsuario.cs</DependentUpon>

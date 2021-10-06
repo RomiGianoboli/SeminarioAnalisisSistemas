@@ -31,13 +31,10 @@ namespace TPI_PAV
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BtnBugs = new System.Windows.Forms.Button();
             this.FrmReportes = new System.Windows.Forms.Button();
             this.BtnUsuario = new System.Windows.Forms.Button();
-            this.BtnCompras = new System.Windows.Forms.Button();
             this.BtnClientes = new System.Windows.Forms.Button();
             this.BtnFacturacion = new System.Windows.Forms.Button();
-            this.BtnProveedores = new System.Windows.Forms.Button();
             this.BtnProductos = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -57,13 +54,10 @@ namespace TPI_PAV
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Olive;
-            this.panel1.Controls.Add(this.BtnBugs);
             this.panel1.Controls.Add(this.FrmReportes);
             this.panel1.Controls.Add(this.BtnUsuario);
-            this.panel1.Controls.Add(this.BtnCompras);
             this.panel1.Controls.Add(this.BtnClientes);
             this.panel1.Controls.Add(this.BtnFacturacion);
-            this.panel1.Controls.Add(this.BtnProveedores);
             this.panel1.Controls.Add(this.BtnProductos);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -71,22 +65,6 @@ namespace TPI_PAV
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(172, 486);
             this.panel1.TabIndex = 0;
-            // 
-            // BtnBugs
-            // 
-            this.BtnBugs.FlatAppearance.BorderSize = 0;
-            this.BtnBugs.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.BtnBugs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBugs.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBugs.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnBugs.Image = ((System.Drawing.Image)(resources.GetObject("BtnBugs.Image")));
-            this.BtnBugs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnBugs.Location = new System.Drawing.Point(-1, 415);
-            this.BtnBugs.Name = "BtnBugs";
-            this.BtnBugs.Size = new System.Drawing.Size(173, 35);
-            this.BtnBugs.TabIndex = 8;
-            this.BtnBugs.Text = "    Bugs";
-            this.BtnBugs.UseVisualStyleBackColor = true;
             // 
             // FrmReportes
             // 
@@ -97,7 +75,7 @@ namespace TPI_PAV
             this.FrmReportes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.FrmReportes.Image = ((System.Drawing.Image)(resources.GetObject("FrmReportes.Image")));
             this.FrmReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.FrmReportes.Location = new System.Drawing.Point(-1, 374);
+            this.FrmReportes.Location = new System.Drawing.Point(-1, 343);
             this.FrmReportes.Name = "FrmReportes";
             this.FrmReportes.Size = new System.Drawing.Size(173, 35);
             this.FrmReportes.TabIndex = 7;
@@ -113,30 +91,13 @@ namespace TPI_PAV
             this.BtnUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("BtnUsuario.Image")));
             this.BtnUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnUsuario.Location = new System.Drawing.Point(3, 140);
+            this.BtnUsuario.Location = new System.Drawing.Point(0, 179);
             this.BtnUsuario.Name = "BtnUsuario";
-            this.BtnUsuario.Size = new System.Drawing.Size(147, 35);
+            this.BtnUsuario.Size = new System.Drawing.Size(172, 35);
             this.BtnUsuario.TabIndex = 6;
             this.BtnUsuario.Text = "     Usuarios";
             this.BtnUsuario.UseVisualStyleBackColor = true;
             this.BtnUsuario.Click += new System.EventHandler(this.BtnUsuario_Click);
-            // 
-            // BtnCompras
-            // 
-            this.BtnCompras.FlatAppearance.BorderSize = 0;
-            this.BtnCompras.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.BtnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCompras.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCompras.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnCompras.Image = ((System.Drawing.Image)(resources.GetObject("BtnCompras.Image")));
-            this.BtnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCompras.Location = new System.Drawing.Point(-1, 336);
-            this.BtnCompras.Name = "BtnCompras";
-            this.BtnCompras.Size = new System.Drawing.Size(173, 35);
-            this.BtnCompras.TabIndex = 5;
-            this.BtnCompras.Text = "     Compras";
-            this.BtnCompras.UseVisualStyleBackColor = true;
-            this.BtnCompras.Click += new System.EventHandler(this.BtnCompras_Click);
             // 
             // BtnClientes
             // 
@@ -147,9 +108,9 @@ namespace TPI_PAV
             this.BtnClientes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnClientes.Image = ((System.Drawing.Image)(resources.GetObject("BtnClientes.Image")));
             this.BtnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnClientes.Location = new System.Drawing.Point(3, 222);
+            this.BtnClientes.Location = new System.Drawing.Point(-1, 261);
             this.BtnClientes.Name = "BtnClientes";
-            this.BtnClientes.Size = new System.Drawing.Size(169, 35);
+            this.BtnClientes.Size = new System.Drawing.Size(173, 35);
             this.BtnClientes.TabIndex = 3;
             this.BtnClientes.Text = "Clientes";
             this.BtnClientes.UseVisualStyleBackColor = true;
@@ -164,29 +125,13 @@ namespace TPI_PAV
             this.BtnFacturacion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnFacturacion.Image = ((System.Drawing.Image)(resources.GetObject("BtnFacturacion.Image")));
             this.BtnFacturacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnFacturacion.Location = new System.Drawing.Point(3, 181);
+            this.BtnFacturacion.Location = new System.Drawing.Point(3, 220);
             this.BtnFacturacion.Name = "BtnFacturacion";
-            this.BtnFacturacion.Size = new System.Drawing.Size(161, 35);
+            this.BtnFacturacion.Size = new System.Drawing.Size(169, 35);
             this.BtnFacturacion.TabIndex = 2;
             this.BtnFacturacion.Text = "        Facturación";
             this.BtnFacturacion.UseVisualStyleBackColor = true;
             this.BtnFacturacion.Click += new System.EventHandler(this.BtnFacturacion_Click);
-            // 
-            // BtnProveedores
-            // 
-            this.BtnProveedores.FlatAppearance.BorderSize = 0;
-            this.BtnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnProveedores.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnProveedores.ForeColor = System.Drawing.Color.White;
-            this.BtnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("BtnProveedores.Image")));
-            this.BtnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnProveedores.Location = new System.Drawing.Point(-1, 307);
-            this.BtnProveedores.Name = "BtnProveedores";
-            this.BtnProveedores.Size = new System.Drawing.Size(173, 23);
-            this.BtnProveedores.TabIndex = 2;
-            this.BtnProveedores.Text = "         Proveedores";
-            this.BtnProveedores.UseVisualStyleBackColor = true;
-            this.BtnProveedores.Click += new System.EventHandler(this.BtnProveedores_Click);
             // 
             // BtnProductos
             // 
@@ -197,9 +142,9 @@ namespace TPI_PAV
             this.BtnProductos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnProductos.Image = ((System.Drawing.Image)(resources.GetObject("BtnProductos.Image")));
             this.BtnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnProductos.Location = new System.Drawing.Point(3, 263);
+            this.BtnProductos.Location = new System.Drawing.Point(-1, 302);
             this.BtnProductos.Name = "BtnProductos";
-            this.BtnProductos.Size = new System.Drawing.Size(161, 35);
+            this.BtnProductos.Size = new System.Drawing.Size(168, 35);
             this.BtnProductos.TabIndex = 1;
             this.BtnProductos.Text = "      Productos";
             this.BtnProductos.UseVisualStyleBackColor = true;
@@ -317,12 +262,9 @@ namespace TPI_PAV
         private System.Windows.Forms.PictureBox IconoRestaurar;
         private System.Windows.Forms.Button BtnProductos;
         private System.Windows.Forms.Button BtnUsuario;
-        private System.Windows.Forms.Button BtnCompras;
         private System.Windows.Forms.Button BtnClientes;
         private System.Windows.Forms.Button BtnFacturacion;
-        private System.Windows.Forms.Button BtnProveedores;
         private System.Windows.Forms.Button FrmReportes;
-        private System.Windows.Forms.Button BtnBugs;
     }
 }
 

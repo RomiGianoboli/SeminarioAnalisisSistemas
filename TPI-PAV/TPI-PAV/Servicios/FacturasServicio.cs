@@ -21,7 +21,7 @@ namespace TPI_PAV.Servicios
             return facturasRepositorio.ObtenerSiguienteNumeroFactura();
         }
 
-        internal void GenerarFactura(Factura fa, DetalleFactura ld)
+        internal void GenerarFactura(Factura fa, List<DetalleFactura> ld)
         {
             facturasRepositorio.GenerarFactura(fa, ld);
         }

@@ -35,16 +35,13 @@ namespace TPI_PAV.InterfacesDeUsuario
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-            var dialog = MessageBox.Show("¿Desea salir?", "Informacion", MessageBoxButtons.OKCancel);
-            if(dialog == DialogResult.OK)
-            {
                 this.Dispose();
-            }
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
 
         }
+
     }
 }
