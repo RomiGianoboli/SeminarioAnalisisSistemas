@@ -28,5 +28,10 @@ namespace TPI_PAV.Entidades
                 return Precio * Cantidad;
             } 
         }
+
+        public DateTime? FechaDesde { get; set; }
+        public DateTime? FechaHasta { get; set; }
+
+        
     }
 }

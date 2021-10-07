@@ -116,6 +116,11 @@ namespace TPI_PAV.InterfacesDeUsuario
             CargarGrilla(listaDetalle);
         }
 
+
+
+       
+
+
         private void CargarGrilla(List<DetalleFactura> df)
         {
             decimal totalFactura = 0;
@@ -183,6 +188,33 @@ namespace TPI_PAV.InterfacesDeUsuario
 
             facturasServicio.GenerarFactura(fa, listaDetalle);
             MessageBox.Show("Se genero la factura con éxito", "Información");
+
+        }
+
+        private void BtnQuitar_Click(object sender, EventArgs e)
+        {
+
+            if (DgvDetalle.SelectedRows.Count == 1)
+            {
+                var dialog = MessageBox.Show("¿Desea eliminar este producto de la lista?", "Informaación", MessageBoxButtons.YesNo);
+
+                if (dialog == DialogResult.Yes)
+                {
+                    DataGridViewSelectedRowCollection rows = DgvDetalle.SelectedRows;
+                    DgvDetalle.Rows.RemoveAt(DgvDetalle.SelectedRows[0].Index);
+                }
+
+                return;
+            }
+            if (DgvDetalle.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar un registro.", "Informacion", MessageBoxButtons.OK);
+                return;
+            }
+            if (DgvDetalle.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Debe seleccionar solo un registro, no muchos.", "Informacion", MessageBoxButtons.OK);
+            }
 
         }
     }

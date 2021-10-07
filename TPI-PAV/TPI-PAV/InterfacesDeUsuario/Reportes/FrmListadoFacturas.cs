@@ -88,8 +88,8 @@ namespace TPI_PAV.InterfacesDeUsuario.Reportes
         
         private void Consultar(RepFacturas filtros)
         {
-            var facturas = repFacturasServicio.Obtener(filtros);
-            CargarGrilla(facturas);
+            //var facturas = repFacturasServicio.Obtener(filtros);
+            //CargarGrilla(facturas);
 
         }
     }

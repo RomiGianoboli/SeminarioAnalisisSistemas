@@ -35,14 +35,14 @@ namespace TPI_PAV.InterfacesDeUsuario.Reportes
             this.DtpFechaHasta = new System.Windows.Forms.DateTimePicker();
             this.LblFechaHasta = new System.Windows.Forms.Label();
             this.BtnConsultar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.BtnSalir = new System.Windows.Forms.Button();
+            this.DgvDetalle = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnSalir = new System.Windows.Forms.Button();
             this.CkIncluirTodos = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // DtpFechaDesde
@@ -93,31 +93,21 @@ namespace TPI_PAV.InterfacesDeUsuario.Reportes
             this.BtnConsultar.TabIndex = 5;
             this.BtnConsultar.Text = "Consultar";
             this.BtnConsultar.UseVisualStyleBackColor = false;
+            this.BtnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
             // 
-            // dataGridView1
+            // DgvDetalle
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvDetalle.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Producto,
             this.Cantidad,
             this.Total});
-            this.dataGridView1.Location = new System.Drawing.Point(46, 124);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(580, 150);
-            this.dataGridView1.TabIndex = 6;
-            // 
-            // BtnSalir
-            // 
-            this.BtnSalir.FlatAppearance.BorderSize = 0;
-            this.BtnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
-            this.BtnSalir.Location = new System.Drawing.Point(551, 280);
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(75, 38);
-            this.BtnSalir.TabIndex = 7;
-            this.BtnSalir.UseVisualStyleBackColor = true;
+            this.DgvDetalle.Location = new System.Drawing.Point(46, 124);
+            this.DgvDetalle.Name = "DgvDetalle";
+            this.DgvDetalle.Size = new System.Drawing.Size(580, 150);
+            this.DgvDetalle.TabIndex = 6;
             // 
             // Id
             // 
@@ -150,6 +140,18 @@ namespace TPI_PAV.InterfacesDeUsuario.Reportes
             this.Total.ReadOnly = true;
             this.Total.Width = 180;
             // 
+            // BtnSalir
+            // 
+            this.BtnSalir.FlatAppearance.BorderSize = 0;
+            this.BtnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
+            this.BtnSalir.Location = new System.Drawing.Point(551, 280);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(75, 38);
+            this.BtnSalir.TabIndex = 7;
+            this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
             // CkIncluirTodos
             // 
             this.CkIncluirTodos.AutoSize = true;
@@ -169,7 +171,7 @@ namespace TPI_PAV.InterfacesDeUsuario.Reportes
             this.ClientSize = new System.Drawing.Size(676, 328);
             this.Controls.Add(this.CkIncluirTodos);
             this.Controls.Add(this.BtnSalir);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DgvDetalle);
             this.Controls.Add(this.BtnConsultar);
             this.Controls.Add(this.LblFechaHasta);
             this.Controls.Add(this.DtpFechaHasta);
@@ -177,8 +179,10 @@ namespace TPI_PAV.InterfacesDeUsuario.Reportes
             this.Controls.Add(this.DtpFechaDesde);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmProductosMasVendidos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmProductosMasVendidos";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmProductosMasVendidos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvDetalle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,7 +195,7 @@ namespace TPI_PAV.InterfacesDeUsuario.Reportes
         private System.Windows.Forms.DateTimePicker DtpFechaHasta;
         private System.Windows.Forms.Label LblFechaHasta;
         private System.Windows.Forms.Button BtnConsultar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DgvDetalle;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;

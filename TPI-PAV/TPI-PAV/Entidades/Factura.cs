@@ -17,8 +17,6 @@ namespace TPI_PAV.Entidades
         public decimal Total { get; set; }
         public bool Estado { get; set; }
 
-
-      
     }
 
  

@@ -205,6 +205,7 @@
     <Compile Include="Servicios\ProductosServicio.cs" />
     <Compile Include="Servicios\ProveedoresServicio.cs" />
     <Compile Include="Servicios\RepFacturasServicio.cs" />
+    <Compile Include="Servicios\RepProductosServicio.cs" />
     <Compile Include="Servicios\UsuariosServicio.cs" />
     <Compile Include="Utils\FormUtils.cs" />
     <EmbeddedResource Include="InterfacesDeUsuario\Clientes\FrmBajaCliente.resx">

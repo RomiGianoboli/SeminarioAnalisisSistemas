@@ -4,6 +4,7 @@ using TPI_PAV.Entidades;
 using TPI_PAV.InterfacesDeUsuario;
 using TPI_PAV.InterfacesDeUsuario.Productos;
 using TPI_PAV.InterfacesDeUsuario.Proveedores;
+using TPI_PAV.InterfacesDeUsuario.Reportes;
 using TPI_PAV.InterfacesDeUsuario.Usuarios;
 using TPI_PAV.Servicios;
 
@@ -88,6 +89,12 @@ namespace TPI_PAV
         {
             var frmFactura = new VistaFactura();
             frmFactura.ShowDialog();
+        }
+
+        private void FrmReportes_Click(object sender, EventArgs e)
+        {
+            var frmProdMasVendidos = new FrmProductosMasVendidos();
+            frmProdMasVendidos.ShowDialog();
         }
     }
 }

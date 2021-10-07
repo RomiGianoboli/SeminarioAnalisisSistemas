@@ -29,6 +29,7 @@ namespace TPI_PAV.InterfacesDeUsuario
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VistaFactura));
             this.LblNumeroFactura = new System.Windows.Forms.Label();
             this.TxtNumeroFactura = new System.Windows.Forms.TextBox();
             this.Cliente = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@ namespace TPI_PAV.InterfacesDeUsuario
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnQuitar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDetalle)).BeginInit();
             this.SuspendLayout();
             // 
@@ -256,7 +258,7 @@ namespace TPI_PAV.InterfacesDeUsuario
             this.Precio,
             this.Cantidad,
             this.Total});
-            this.DgvDetalle.Location = new System.Drawing.Point(69, 190);
+            this.DgvDetalle.Location = new System.Drawing.Point(36, 177);
             this.DgvDetalle.MultiSelect = false;
             this.DgvDetalle.Name = "DgvDetalle";
             this.DgvDetalle.ReadOnly = true;
@@ -269,6 +271,7 @@ namespace TPI_PAV.InterfacesDeUsuario
             this.Id.DataPropertyName = "Id";
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             this.Id.Visible = false;
             // 
             // Producto
@@ -303,12 +306,25 @@ namespace TPI_PAV.InterfacesDeUsuario
             this.Total.ReadOnly = true;
             this.Total.Width = 140;
             // 
+            // BtnQuitar
+            // 
+            this.BtnQuitar.FlatAppearance.BorderSize = 0;
+            this.BtnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnQuitar.Image = ((System.Drawing.Image)(resources.GetObject("BtnQuitar.Image")));
+            this.BtnQuitar.Location = new System.Drawing.Point(634, 304);
+            this.BtnQuitar.Name = "BtnQuitar";
+            this.BtnQuitar.Size = new System.Drawing.Size(75, 23);
+            this.BtnQuitar.TabIndex = 26;
+            this.BtnQuitar.UseVisualStyleBackColor = true;
+            this.BtnQuitar.Click += new System.EventHandler(this.BtnQuitar_Click);
+            // 
             // VistaFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Olive;
             this.ClientSize = new System.Drawing.Size(721, 437);
+            this.Controls.Add(this.BtnQuitar);
             this.Controls.Add(this.DgvDetalle);
             this.Controls.Add(this.DtpFechaAlta);
             this.Controls.Add(this.TxtFechaAlta);
@@ -367,5 +383,6 @@ namespace TPI_PAV.InterfacesDeUsuario
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.Button BtnQuitar;
     }
 }

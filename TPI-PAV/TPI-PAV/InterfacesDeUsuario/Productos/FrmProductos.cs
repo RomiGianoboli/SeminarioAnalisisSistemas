@@ -70,6 +70,7 @@ namespace TPI_PAV.InterfacesDeUsuario.Productos
         {
             new FrmRegistrarProducto().Show();
             ConsultarProductos();
+            return;
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)

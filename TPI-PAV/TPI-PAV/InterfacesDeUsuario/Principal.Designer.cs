@@ -81,6 +81,7 @@ namespace TPI_PAV
             this.FrmReportes.TabIndex = 7;
             this.FrmReportes.Text = "     Reportes";
             this.FrmReportes.UseVisualStyleBackColor = true;
+            this.FrmReportes.Click += new System.EventHandler(this.FrmReportes_Click);
             // 
             // BtnUsuario
             // 
