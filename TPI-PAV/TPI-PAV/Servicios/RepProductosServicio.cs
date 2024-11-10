@@ -17,10 +17,21 @@ namespace TPI_PAV.Servicios
             repProductosRepositrios = new RepProductosRepositorio();
         }
 
-        public List<RepProductos> GetProductosMasVendidos(DateTime fechaDese, DateTime fechaHasta)
-        {
+        //public List<RepProductos> GetProductosMasVendidos(RepProductos rep)
+        //{
+        //    if (rep.fechaDesde.HasValue)
+        //        rep.fechaDesde = new DateTime(rep.fechaDesde.Value.Year,
+        //                                           rep.fechaDesde.Value.Month,
+        //                                            rep.fechaDesde.Value.Day);
+        //    if (rep.fechaHasta.HasValue)
+        //        rep.fechaHasta = new DateTime(rep.fechaHasta.Value.Year,
+        //                                            rep.fechaHasta.Value.Month,
+        //                                            rep.fechaHasta.Value.Day);
+        //    if (rep.fechaDesde.HasValue && rep.fechaHasta.HasValue &&
+        //        rep.fechaDesde > rep.fechaHasta)
+        //        throw new ApplicationException("La fecha desde no puede ser mayor a la fecha hasta");
 
-            return repProductosRepositrios.GetProductosMasVendidos(fechaDese, fechaHasta);
-        }
+        //    return repProductosRepositrios.GetProductosMasVendidos(rep);
+        //}
     }
 }

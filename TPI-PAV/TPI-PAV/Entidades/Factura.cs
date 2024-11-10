@@ -16,6 +16,14 @@ namespace TPI_PAV.Entidades
         public Usuario Usuario { get; set; }
         public decimal Total { get; set; }
         public bool Estado { get; set; }
+    
+        public string NombreCliente
+        {
+            get
+            {
+                return Cliente.NombreCliente;
+            }
+        }
 
     }
 

@@ -117,26 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="DetalleFacturaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
-  <metadata name="Fecha_Alta.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Cliente.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Total.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="FacturaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>225, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAACfSURBVFhH7ZRRDkAwEAX3EgR3cD6/TuYSBLfhrWgi0mC7pT52komItB0KMowLlsiK8U2iUUzw
-        wBMWYAEN/Dyghh3MtzOidj+K0ATw4jx2gC5CjCYggz3k8TOsoBhNAMN3zk8gOOIqoIDu+lNHKNoON9BH
-        8oAnvLoFdxxfwgmWUIwmIPlnmPxHdIQXD5onVkDwPBbwm4BYivFNotEwPBCtJ+u4FKxyvHgAAAAASUVO
-        RK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAJ9JREFUWEft
+        lFEOQDAQBfcSBHdwPr9O5hIEt+GtaCLSYLulPnaSiYi0HQoyjAuWyIrxTaJRTPDAExZgAQ38PKCGHcy3
+        M6J2P4rQBPDiPHaALkKMJiCDPeTxM6ygGE0Aw3fOTyA44iqggO76U0co2g430EfygCe8ugV3HF/CCZZQ
+        jCYg+WeY/Ed0hBcPmidWQPA8FvCbgFiK8U2i0TA8EK0n67gUrHK8eAAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>

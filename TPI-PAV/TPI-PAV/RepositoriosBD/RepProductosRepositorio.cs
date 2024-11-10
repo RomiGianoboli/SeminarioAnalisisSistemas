@@ -11,39 +11,23 @@ namespace TPI_PAV.RepositoriosBD
     public class RepProductosRepositorio
     {
 
-        public List<RepProductos> GetProductosMasVendidos(DateTime fechaDese, DateTime fechaHasta)
-        {
-            List<RepProductos> df = new List<RepProductos>();
+        public DataTable GetProductosMasVendidos(DateTime fechaDesde, DateTime fechaHasta)
+        { 
 
-            var sql = $" SELECT pro.nombre as producto ,fd.cantidad as cantidad, fa.total as total" +
+            var sql = $" SELECT pro.nombre as producto, SUM(fd.cantidad) as cantidad, SUM(fa.total) as total" +
                         " FROM FacturasDetalle fd" +
                         " INNER JOIN Productos pro ON  pro.id_producto = fd.id_producto" +
                         " INNER JOIN Facturas fa ON fa.id_factura = fd.id_factura" +
-                        $" WHERE fa.fecha_alta between {fechaDese.ToString("yyyy-MM-dd")} and {fechaHasta.ToString("yyyy-MM-dd")}" +
-                        " group by pro.nombre, fd.cantidad, fa.total" +
-                        " order by fd.cantidad desc";
+                        $" WHERE fa.fecha_alta between '{fechaDesde.ToString("yyyy-MM-dd")}' and '{fechaHasta.ToString("yyyy-MM-dd")}'" +
+                        " group by nombre" +
+                        " order by cantidad desc";
+
        
             var tabla = DBHelper.GetDBHelper().ConsultaSQL(sql);
 
-            foreach (DataRow fila in tabla.Rows)
-            {
-                var detalle = Mapear(fila);
-                df.Add(detalle);
-            }
-            return df;
+            return tabla;
 
         }
 
-        private RepProductos Mapear(DataRow fila)
-        {
-            var repor = new RepProductos();
-
-            repor.NombreProducto = fila["producto"].ToString();
-            repor.Cantidad = Convert.ToInt32(fila["cantidad"]);
-            repor.Total = Convert.ToDecimal(fila["total"]);
-           
-            return repor;
-
-        }
     }
 }

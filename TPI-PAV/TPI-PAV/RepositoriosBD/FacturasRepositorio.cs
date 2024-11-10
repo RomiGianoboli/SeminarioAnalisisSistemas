@@ -38,6 +38,8 @@ namespace TPI_PAV.RepositoriosBD
                         var sqlDetalleFa = $"INSERT INTO FacturasDetalle (id_factura, id_producto, cantidad, estado, precio) " +
                        $"VALUES ({fa.Id}, {df.producto.Id},{df.Cantidad},'S',{df.Precio.ToString().Replace(",", ".")})";
                         DBHelper.GetDBHelper().EjecutarTransaccionSQL(sqlDetalleFa);
+                        var upDateStock = $"UPDATE Productos SET stock=stock-{df.Cantidad} WHERE id_producto={df.producto.Id}";
+                        DBHelper.GetDBHelper().EjecutarTransaccionSQL(upDateStock);
                     }
                    
 
@@ -53,7 +55,21 @@ namespace TPI_PAV.RepositoriosBD
                 {
                     DBHelper.GetDBHelper().CloseConnection();
                 }
+
+
+
+
+
+
+
             }
+
+
+
+
+
+
+
 
             ////Inserto Encabezado Factura
             //var sentenciaSql = $"Insert into Factura blalala{fa.Cliente.Id}";

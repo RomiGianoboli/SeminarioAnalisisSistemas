@@ -35,14 +35,8 @@ namespace TPI_PAV.InterfacesDeUsuario.Reportes
             this.DtpFechaHasta = new System.Windows.Forms.DateTimePicker();
             this.LblFechaHasta = new System.Windows.Forms.Label();
             this.BtnConsultar = new System.Windows.Forms.Button();
-            this.DgvDetalle = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnSalir = new System.Windows.Forms.Button();
-            this.CkIncluirTodos = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvDetalle)).BeginInit();
+            this.RwProducto = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
             // DtpFechaDesde
@@ -87,7 +81,7 @@ namespace TPI_PAV.InterfacesDeUsuario.Reportes
             // 
             this.BtnConsultar.BackColor = System.Drawing.Color.Silver;
             this.BtnConsultar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnConsultar.Location = new System.Drawing.Point(540, 95);
+            this.BtnConsultar.Location = new System.Drawing.Point(564, 74);
             this.BtnConsultar.Name = "BtnConsultar";
             this.BtnConsultar.Size = new System.Drawing.Size(86, 23);
             this.BtnConsultar.TabIndex = 5;
@@ -95,83 +89,36 @@ namespace TPI_PAV.InterfacesDeUsuario.Reportes
             this.BtnConsultar.UseVisualStyleBackColor = false;
             this.BtnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
             // 
-            // DgvDetalle
-            // 
-            this.DgvDetalle.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.DgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Producto,
-            this.Cantidad,
-            this.Total});
-            this.DgvDetalle.Location = new System.Drawing.Point(46, 124);
-            this.DgvDetalle.Name = "DgvDetalle";
-            this.DgvDetalle.Size = new System.Drawing.Size(580, 150);
-            this.DgvDetalle.TabIndex = 6;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            // 
-            // Producto
-            // 
-            this.Producto.DataPropertyName = "NombreProducto";
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            this.Producto.Width = 180;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.DataPropertyName = "Cantidad";
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 180;
-            // 
-            // Total
-            // 
-            this.Total.DataPropertyName = "Total";
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            this.Total.Width = 180;
-            // 
             // BtnSalir
             // 
             this.BtnSalir.FlatAppearance.BorderSize = 0;
             this.BtnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
-            this.BtnSalir.Location = new System.Drawing.Point(551, 280);
+            this.BtnSalir.Location = new System.Drawing.Point(712, 534);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(75, 38);
             this.BtnSalir.TabIndex = 7;
             this.BtnSalir.UseVisualStyleBackColor = true;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
-            // CkIncluirTodos
+            // RwProducto
             // 
-            this.CkIncluirTodos.AutoSize = true;
-            this.CkIncluirTodos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CkIncluirTodos.Location = new System.Drawing.Point(16, 65);
-            this.CkIncluirTodos.Name = "CkIncluirTodos";
-            this.CkIncluirTodos.Size = new System.Drawing.Size(209, 21);
-            this.CkIncluirTodos.TabIndex = 8;
-            this.CkIncluirTodos.Text = "Incluir a todos los productos";
-            this.CkIncluirTodos.UseVisualStyleBackColor = true;
+            this.RwProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.RwProducto.LocalReport.ReportEmbeddedResource = "TPI_PAV.InterfacesDeUsuario.Reportes.Productos.ReporteProducto.rdlc";
+            this.RwProducto.Location = new System.Drawing.Point(16, 122);
+            this.RwProducto.Name = "RwProducto";
+            this.RwProducto.ServerReport.BearerToken = null;
+            this.RwProducto.Size = new System.Drawing.Size(744, 406);
+            this.RwProducto.TabIndex = 9;
             // 
             // FrmProductosMasVendidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Olive;
-            this.ClientSize = new System.Drawing.Size(676, 328);
-            this.Controls.Add(this.CkIncluirTodos);
+            this.ClientSize = new System.Drawing.Size(808, 584);
+            this.Controls.Add(this.RwProducto);
             this.Controls.Add(this.BtnSalir);
-            this.Controls.Add(this.DgvDetalle);
             this.Controls.Add(this.BtnConsultar);
             this.Controls.Add(this.LblFechaHasta);
             this.Controls.Add(this.DtpFechaHasta);
@@ -182,7 +129,6 @@ namespace TPI_PAV.InterfacesDeUsuario.Reportes
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmProductosMasVendidos";
             this.Load += new System.EventHandler(this.FrmProductosMasVendidos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvDetalle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,12 +141,7 @@ namespace TPI_PAV.InterfacesDeUsuario.Reportes
         private System.Windows.Forms.DateTimePicker DtpFechaHasta;
         private System.Windows.Forms.Label LblFechaHasta;
         private System.Windows.Forms.Button BtnConsultar;
-        private System.Windows.Forms.DataGridView DgvDetalle;
         private System.Windows.Forms.Button BtnSalir;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.CheckBox CkIncluirTodos;
+        private Microsoft.Reporting.WinForms.ReportViewer RwProducto;
     }
 }

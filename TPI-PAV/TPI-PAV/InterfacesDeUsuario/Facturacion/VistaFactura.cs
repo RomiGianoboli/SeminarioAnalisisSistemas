@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TPI_PAV.Entidades;
 using TPI_PAV.Servicios;
 using System.Collections.ObjectModel;
+using TPI_PAV.InterfacesDeUsuario.Reportes;
 
 namespace TPI_PAV.InterfacesDeUsuario
 {
@@ -22,7 +23,7 @@ namespace TPI_PAV.InterfacesDeUsuario
         public int numeroFactura;
         public List<DetalleFactura> listaDetalle = new List<DetalleFactura>();
 
-        
+
 
         public VistaFactura()
         {
@@ -31,7 +32,7 @@ namespace TPI_PAV.InterfacesDeUsuario
             productosServicio = new ProductosServicio();
             clientesServicio = new ClientesServicio();
             listaDetalle = new List<DetalleFactura>();
-            
+
             numeroFactura = facturasServicio.ObtenerSiguienteNumeroFactura();
             InitializeComponent();
         }
@@ -50,7 +51,7 @@ namespace TPI_PAV.InterfacesDeUsuario
             CargarProductos();
             usuarioLogueado = UsuariosServicio.UsuarioLogueado;
             TxtUsuario.Text = $"{usuarioLogueado.NombreUsuario}";
-            
+
         }
 
         private void CargarClientes()
@@ -100,18 +101,43 @@ namespace TPI_PAV.InterfacesDeUsuario
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             AgregarProducto();
-            
+
         }
 
         private void AgregarProducto()
         {
-            var df = new DetalleFactura();
+            Producto selectedProduct = (Producto)CbProducto.SelectedItem;
 
-            df.producto = (Producto)CbProducto.SelectedItem;
-            df.Precio = Convert.ToDecimal(TxtPrecio.Text);
-            df.Cantidad = Convert.ToInt32(TxtCantidad.Text);
-            df.Estado = true;
-            listaDetalle.Add(df);
+            if (Convert.ToInt32(TxtCantidad.Text) <= selectedProduct.Stock)
+            {
+                DetalleFactura detalleExistente = listaDetalle.Find(t => t.producto.Id == selectedProduct.Id);
+
+                var cant = Convert.ToInt32(TxtCantidad.Text);
+
+                if (detalleExistente != null)
+                {
+                    detalleExistente.Cantidad += cant;
+                }
+                else
+                {
+                    var df = new DetalleFactura();
+
+
+                    df.producto = selectedProduct;
+                    df.Precio = Convert.ToDecimal(TxtPrecio.Text);
+                    df.Cantidad = cant;
+                    df.Estado = true;
+                    listaDetalle.Add(df);
+                    
+                }
+                selectedProduct.Stock = selectedProduct.Stock - cant;
+
+            }
+            else
+            {
+                MessageBox.Show("No hay suficiente stock", "Información", MessageBoxButtons.OK);
+            }
+            
 
             CargarGrilla(listaDetalle);
         }
@@ -187,8 +213,16 @@ namespace TPI_PAV.InterfacesDeUsuario
             fa.Usuario = usuarioLogueado;
 
             facturasServicio.GenerarFactura(fa, listaDetalle);
-            MessageBox.Show("Se genero la factura con éxito", "Información");
+            var dia = MessageBox.Show("Se genero la factura con éxito, Desea ver la factura?", "Información", MessageBoxButtons.YesNo);
 
+            if (dia == DialogResult.Yes)
+            {
+                
+                var frmVista = new FrmListadoFacturas(fa, listaDetalle);
+                frmVista.ShowDialog();
+               
+            }
+            this.Dispose();
         }
 
         private void BtnQuitar_Click(object sender, EventArgs e)
@@ -200,8 +234,10 @@ namespace TPI_PAV.InterfacesDeUsuario
 
                 if (dialog == DialogResult.Yes)
                 {
-                    DataGridViewSelectedRowCollection rows = DgvDetalle.SelectedRows;
-                    DgvDetalle.Rows.RemoveAt(DgvDetalle.SelectedRows[0].Index);
+                    listaDetalle.RemoveAt(DgvDetalle.SelectedRows[0].Index);
+
+
+                    CargarGrilla(listaDetalle);
                 }
 
                 return;
